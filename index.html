@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+
+    <title>Input with Button</title>
+
+    <style>
+        .input-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .input-wrapper input {
+            padding-right: 40px;
+        }
+
+        .input-wrapper button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="input-wrapper">
+        <input type="text" placeholder="Search...">
+        <button onclick="alert('Button clicked!');">
+            &#128269;
+        </button>
+    </div>
+</body>
+
+</html>
