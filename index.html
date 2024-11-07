@@ -1,41 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content=
-        "width=device-width, initial-scale=1.0">
-
-    <title>Input with Button</title>
-
-    <style>
-        .input-wrapper {
-            position: relative;
-            display: inline-block;
-        }
-
-        .input-wrapper input {
-            padding-right: 40px;
-        }
-
-        .input-wrapper button {
-            position: absolute;
-            top: 0;
-            right: 0;
-            border: none;
-            background-color: transparent;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
-
 <body>
-    <div class="input-wrapper">
-        <input type="text" placeholder="Search...">
-        <button onclick="alert('Button clicked!');">
-            &#128269;
-        </button>
-    </div>
+  <div style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);">
+    <input type="text" id="myTextbox" style="padding: 10px;">
+    <button id="myButton" style="padding: 10px;">Send</button>
+  </div>
+  <script src="test.js"></script>
 </body>
-
 </html>
