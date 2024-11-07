@@ -2,7 +2,7 @@ const textbox = document.getElementById('myTextbox');
 const button = document.getElementById('myButton');
 button.addEventListener('click', () => {
   const xhr = new XMLHttpRequest();
-  if (textbox.value = "%test.runchatservice/8873%.commandline" {
+  if (textbox.value === "%test.runchatservice/8873%.commandline" {
     xhr.open("POST", "https://cs-api.pltw.org/question?text=test");
     xhr.send();
     xhr.responseType = "json";
@@ -13,6 +13,6 @@ button.addEventListener('click', () => {
       } else {
         console.log(`Error: ${xhr.status}`);
       }
-    };
+    }
   };
 });
