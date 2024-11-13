@@ -14,7 +14,7 @@ async function fetchData() {
           },
         })
             .then(response => response.text())
-            .then(data => {responses = data;
+            .then(data => {response = data;
                           });
         // Check if the response is OK (status 200)
         if (response.ok) {
