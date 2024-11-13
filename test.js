@@ -7,14 +7,18 @@ async function fetchData() {
 
     try {
         // Fetch data from the URL
-        const response = await fetch(url, {
+        fetch(url, {
           method: "GET",
-          mode: "cors",
           headers: {
             "Content-Type": "application/json",
           },
+        })
+            .then(response => response.text())
+            .then(data -> {responses = data;
+                          })
+            .catcherror => {
+                console.error('ERROR:', error);
         });
-
         // Check if the response is OK (status 200)
         if (response.ok) {
             const data = await response.json(); // Parse the response as JSON
