@@ -14,7 +14,7 @@ async function fetchData() {
           },
         })
             .then(response => response.text())
-            .then(data -> {responses = data;
+            .then(data => {responses = data;
                           })
             .catcherror => {
                 console.error('ERROR:', error);
