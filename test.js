@@ -1,5 +1,5 @@
 // URL to fetch data from
-const url = "https://jsonplaceholder.typicode.com/todos/1"; // Example API
+const url = "https://cs-api.pltw.org/rant"; // Example API
 
 // Function to fetch and display data
 async function fetchData() {
