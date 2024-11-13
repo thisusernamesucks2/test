@@ -1,5 +1,5 @@
 // URL to fetch data from
-const url = "https://cs-api.pltw.org/rant"; // Example API
+const url = "https://cors-anywhere.herokuapp.com/https://cs-api.pltw.org/rant"; // Example API
 
 // Function to fetch and display data
 async function fetchData() {
