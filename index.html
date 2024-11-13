@@ -1,14 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="veiwport" content="width=device-width, initial-scale=0.1">
-  <title>Other rant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch Data Example</title>
+  <style>
+    #data {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
-  <body>
-    <h1>Here are some other rants.</h1>
-    <div id="content">Loading rants...</div>
-    <script src="test.js"></script>
-  </body>
+<body>
+
+  <h1>Fetched Data from URL</h1>
+
+  <!-- Button to trigger the data fetch -->
+  <button id="fetchDataBtn">Fetch Data</button>
+
+  <!-- This is where the fetched data will be displayed -->
+  <div id="data"></div>
+
+  <script>
+    // Function to fetch data from a URL and display it in the 'data' div
+    document.getElementById('fetchDataBtn').addEventListener('click', function() {
+      fetch('https://cors-anywhere.herokuapp.com/https://www.google.com/search?q=openai', {
+        method: 'GET',
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+        }
+      })
+      .then(response => response.text()) // Convert the response to text
+      .then(data => {
+        // Display the fetched data in the 'data' div
+        document.getElementById('data').innerHTML = `<pre>${data}</pre>`;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('data').innerHTML = 'Failed to fetch data.';
+      });
+    });
+  </script>
+
 </body>
 </html>
