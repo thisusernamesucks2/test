@@ -1,16 +1,32 @@
-const textbox = document.getElementById('myTextbox');
-const button = document.getElementById('myButton');
-button.addEventListener('click', () => {
-  const xhr = new XMLHttpRequest();
-  xhr.open("POST", "https://cs-api.pltw.org/question?text=test");
-  xhr.send();
-  xhr.responseType = "json";
-  xhr.onload = () => {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-      const data = xhr.response;
-      console.log(data);
-    } else {
-      console.log(`Error: ${xhr.status}`);
+// URL to fetch data from
+const url = "https://jsonplaceholder.typicode.com/todos/1"; // Example API
+
+// Function to fetch and display data
+async function fetchData() {
+    const contentDiv = document.getElementById("content");
+
+    try {
+        // Fetch data from the URL
+        const response = await fetch(url);
+
+        // Check if the response is OK (status 200)
+        if (response.ok) {
+            const data = await response.json(); // Parse the response as JSON
+
+            // Display data in the HTML content
+            contentDiv.innerHTML = `
+                <p><strong>ID:</strong> ${data.id}</p>
+                <p><strong>Title:</strong> ${data.title}</p>
+                <p><strong>Completed:</strong> ${data.completed}</p>
+            `;
+        } else {
+            contentDiv.textContent = "Failed to load data.";
+        }
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        contentDiv.textContent = "An error occurred while fetching data.";
     }
-  };
-});
+}
+
+// Call fetchData when the page loads
+window.onload = fetchData;
