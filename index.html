@@ -7,7 +7,7 @@
   <script>
     fetch('https://google.com/search&q?=capital+of+flordia', {
       method: 'GET',
-      mode: 'cors'
+      mode: 'no-cors'
     })
     .then(response => response.json())
     .then(data => {
